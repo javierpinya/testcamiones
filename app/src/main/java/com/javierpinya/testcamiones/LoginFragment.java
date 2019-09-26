@@ -90,7 +90,7 @@ public class LoginFragment extends Fragment {
                             if (pass.trim().equals(allUsuarios.get(i).password.trim())) {
                                 Toast.makeText(getActivity(), "Entra", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent();
-                                intent.setClass(getContext(), MainActivity.class);
+                                intent.setClass(getContext(), MenuActivity.class);
                                 startActivity(intent);
                             }else{
                                 login = false;
