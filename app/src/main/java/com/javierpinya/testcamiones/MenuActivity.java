@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.javierpinya.testcamiones.ui.DashboardFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class MenuActivity extends AppCompatActivity {
                 case R.id.navigation_perfil:
                     return true;
                 case R.id.navigation_dashboard:
+                    f = new DashboardFragment();
                     return true;
                 case R.id.navigation_sincronizar:
                     return true;
