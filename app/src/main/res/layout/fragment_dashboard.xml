@@ -9,15 +9,16 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/imageBuscarCamion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/avatar"
             tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.cardview.widget.CardView>
@@ -33,9 +34,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageBuscarInspeccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/avatar"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
@@ -48,9 +50,10 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageNuevaInspeccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/avatar"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
@@ -64,9 +67,10 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/imageCalculadora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/avatar"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
