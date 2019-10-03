@@ -4,7 +4,8 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
+
+import com.javierpinya.testcamiones.Clases.UsuarioEntity;
 
 import java.util.List;
 

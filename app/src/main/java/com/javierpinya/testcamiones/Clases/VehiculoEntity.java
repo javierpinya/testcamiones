@@ -11,13 +11,13 @@ public class VehiculoEntity {
 
     public String tMatricula;
     public String tTipo;
-    public String tBloqueada;
-    public String tInspeccionada;
+    public Boolean tBloqueada;
+    public Boolean tInspeccionada;
     public String cMatricula;
-    public String cBloqueada;
-    public String cInspeccionada;
+    public Boolean cBloqueada;
+    public Boolean cInspeccionada;
 
-    public VehiculoEntity(String tMatricula, String tTipo, String tBloqueada, String tInspeccionada, String cMatricula, String cBloqueada, String cInspeccionada) {
+    public VehiculoEntity(String tMatricula, String tTipo, Boolean tBloqueada, Boolean tInspeccionada, String cMatricula, Boolean cBloqueada, Boolean cInspeccionada) {
         this.tMatricula = tMatricula;
         this.tTipo = tTipo;
         this.tBloqueada = tBloqueada;
@@ -26,6 +26,7 @@ public class VehiculoEntity {
         this.cBloqueada = cBloqueada;
         this.cInspeccionada = cInspeccionada;
     }
+
 
     public int getId() {
         return id;
@@ -51,22 +52,6 @@ public class VehiculoEntity {
         this.tTipo = tTipo;
     }
 
-    public String gettBloqueada() {
-        return tBloqueada;
-    }
-
-    public void settBloqueada(String tBloqueada) {
-        this.tBloqueada = tBloqueada;
-    }
-
-    public String gettInspeccionada() {
-        return tInspeccionada;
-    }
-
-    public void settInspeccionada(String tInspeccionada) {
-        this.tInspeccionada = tInspeccionada;
-    }
-
     public String getcMatricula() {
         return cMatricula;
     }
@@ -75,19 +60,36 @@ public class VehiculoEntity {
         this.cMatricula = cMatricula;
     }
 
-    public String getcBloqueada() {
+    public Boolean gettBloqueada() {
+        return tBloqueada;
+    }
+
+    public void settBloqueada(Boolean tBloqueada) {
+        this.tBloqueada = tBloqueada;
+    }
+
+    public Boolean gettInspeccionada() {
+        return tInspeccionada;
+    }
+
+    public void settInspeccionada(Boolean tInspeccionada) {
+        this.tInspeccionada = tInspeccionada;
+    }
+
+    public Boolean getcBloqueada() {
         return cBloqueada;
     }
 
-    public void setcBloqueada(String cBloqueada) {
+    public void setcBloqueada(Boolean cBloqueada) {
         this.cBloqueada = cBloqueada;
     }
 
-    public String getcInspeccionada() {
+    public Boolean getcInspeccionada() {
         return cInspeccionada;
     }
 
-    public void setcInspeccionada(String cInspeccionada) {
+    public void setcInspeccionada(Boolean cInspeccionada) {
         this.cInspeccionada = cInspeccionada;
     }
 }
+

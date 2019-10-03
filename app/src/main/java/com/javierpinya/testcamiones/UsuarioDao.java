@@ -5,6 +5,8 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.javierpinya.testcamiones.Clases.UsuarioEntity;
+
 import java.util.List;
 
 @Dao

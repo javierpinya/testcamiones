@@ -62,12 +62,39 @@ public class VehiculosAdapter extends RecyclerView.Adapter<VehiculosAdapter.Vehi
         public void bind(final VehiculoEntity vehiculoEntity, final OnItemClickListener listener){
             this.tvTractora.setText(listaVehiculoEntities.get(getAdapterPosition()).gettMatricula().toString());
             this.tvCisterna.setText(listaVehiculoEntities.get(getAdapterPosition()).getcMatricula().toString());
+            this.ivCisterna.setImageResource(R.drawable.ic_oil_tank);
 
             if(listaVehiculoEntities.get(getAdapterPosition()).gettTipo().equals("T")){
                 this.ivTractora.setImageResource(R.drawable.ic_frontal_truck);
             }else{
                 this.ivTractora.setImageResource(R.drawable.ic_oil_truck);
             }
+
+            if(listaVehiculoEntities.get(getAdapterPosition()).getcBloqueada()){
+                this.ivCisternaBloqueada.setImageResource(R.drawable.ic_ban);
+            }else{
+                this.ivCisternaBloqueada.setImageResource(R.drawable.ic_checked);
+            }
+
+            if(listaVehiculoEntities.get(getAdapterPosition()).gettBloqueada()){
+                this.ivTractoraBloqueada.setImageResource(R.drawable.ic_ban);
+            }else{
+                this.ivTractoraBloqueada.setImageResource(R.drawable.ic_checked);
+            }
+
+            if(listaVehiculoEntities.get(getAdapterPosition()).getcInspeccionada()){
+                this.ivCisternaInspeccionada.setImageResource(R.drawable.ic_inspeccionado_true);
+            }else{
+                this.ivCisternaInspeccionada.setImageResource(R.drawable.ic_inspeccionado_false);
+            }
+
+            if(listaVehiculoEntities.get(getAdapterPosition()).gettInspeccionada()){
+                this.ivTractoraInspeccionada.setImageResource(R.drawable.ic_inspeccionado_true);
+            }else{
+                this.ivTractoraInspeccionada.setImageResource(R.drawable.ic_inspeccionado_false);
+            }
+
+
 
         }
     }

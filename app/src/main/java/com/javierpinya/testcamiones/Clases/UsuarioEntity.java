@@ -1,4 +1,4 @@
-package com.javierpinya.testcamiones;
+package com.javierpinya.testcamiones.Clases;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

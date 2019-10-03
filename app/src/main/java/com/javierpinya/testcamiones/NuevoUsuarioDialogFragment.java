@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.javierpinya.testcamiones.Clases.UsuarioEntity;
+
 public class NuevoUsuarioDialogFragment extends DialogFragment {
 
     private NuevoUsuarioDialogViewModel mViewModel;

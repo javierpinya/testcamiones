@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.javierpinya.testcamiones.Clases.UsuarioEntity;
+
 import java.util.List;
 
 public class UsuarioRepository {
