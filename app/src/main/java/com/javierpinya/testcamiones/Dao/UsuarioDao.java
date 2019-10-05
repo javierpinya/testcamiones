@@ -1,4 +1,4 @@
-package com.javierpinya.testcamiones;
+package com.javierpinya.testcamiones.Dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

@@ -5,7 +5,8 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.javierpinya.testcamiones.Clases.VehiculoEntity;
+import com.javierpinya.testcamiones.Clases.TaccamiEntity;
+import com.javierpinya.testcamiones.Dao.TaccamiDao;
 
 import java.util.List;
 
@@ -13,29 +14,29 @@ import java.util.List;
 public class VehiculoRepository {
 
 
-    private VehiculoDao vehiculoDao;
+    private TaccamiDao taccamiDao;
 
     VehiculoRepository(Application application){
-        UsuarioDatabase db = UsuarioDatabase.getDatabase(application);
-        vehiculoDao = db.vehiculoDao();
+        AppDatabase db = AppDatabase.getDatabase(application);
+        taccamiDao = db.vehiculoDao();
     }
 
-    public LiveData<List<VehiculoEntity>> encuentraVehiculos(){
-        return vehiculoDao.getVehiculos();
+    public LiveData<List<TaccamiEntity>> encuentraVehiculos(){
+        return taccamiDao.findAllTaccami();
     }
 
-    public void insert (VehiculoEntity vehiculoEntity){
-        new insertAsyncTask(vehiculoDao).execute(vehiculoEntity);
+    public void insert (TaccamiEntity taccamiEntity){
+        new insertAsyncTask(taccamiDao).execute(taccamiEntity);
     }
 
-    private static class insertAsyncTask extends AsyncTask<VehiculoEntity, Void, Void>{
+    private static class insertAsyncTask extends AsyncTask<TaccamiEntity, Void, Void>{
 
-        private VehiculoDao asyncTaskDao;
+        private TaccamiDao asyncTaskDao;
 
-        insertAsyncTask(VehiculoDao dao){ asyncTaskDao = dao; }
+        insertAsyncTask(TaccamiDao dao){ asyncTaskDao = dao; }
 
         @Override
-        protected Void doInBackground(VehiculoEntity... vehiculoEntities) {
+        protected Void doInBackground(TaccamiEntity... vehiculoEntities) {
             asyncTaskDao.insert(vehiculoEntities[0]);
             return null;
         }

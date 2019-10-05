@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <EditText
         android:id="@+id/editText"
@@ -13,6 +14,7 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="Cuando pulses el botón de sincronizar se borrará la base de datos actual del dispositivo y se reemplazará por la información que se encuentre en los archivos de la carpeta /downloads"
+        android:textColor="@color/icons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +23,9 @@
         android:id="@+id/btnSync"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:text="Sincronizar"
+        android:textColor="@color/icons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import com.javierpinya.testcamiones.Clases.UsuarioEntity;
+import com.javierpinya.testcamiones.Dao.UsuarioDao;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class UsuarioRepository {
     private UsuarioDao usuarioDao;
 
     UsuarioRepository(Application application){
-        UsuarioDatabase db = UsuarioDatabase.getDatabase(application);
+        AppDatabase db = AppDatabase.getDatabase(application);
         usuarioDao = db.usuarioDao();
     }
 

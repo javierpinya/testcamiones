@@ -5,14 +5,14 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.javierpinya.testcamiones.Clases.VehiculoEntity;
+import com.javierpinya.testcamiones.Clases.TaccamiEntity;
 
 import java.util.List;
 
 public class VehiculoViewModel extends AndroidViewModel {
 
 
-    private List<VehiculoEntity> allVehiculos;
+    private List<TaccamiEntity> allVehiculos;
     private VehiculoRepository vehiculoRepository;
 
     public VehiculoViewModel(Application application){
@@ -22,12 +22,12 @@ public class VehiculoViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<List<VehiculoEntity>> getAllVehiculos(){
+    public LiveData<List<TaccamiEntity>> getAllVehiculos(){
         return vehiculoRepository.encuentraVehiculos();
     }
 
-    public void insertarVehiculo(VehiculoEntity vehiculoEntity){
-        vehiculoRepository.insert(vehiculoEntity);
+    public void insertarVehiculo(TaccamiEntity taccamiEntity){
+        vehiculoRepository.insert(taccamiEntity);
     }
 
 

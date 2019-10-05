@@ -5,7 +5,13 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
+import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.ToxicBakery.viewpager.transforms.DepthPageTransformer;
+import com.ToxicBakery.viewpager.transforms.FlipHorizontalTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.javierpinya.testcamiones.Adapters.SliderAdpater;
 import com.javierpinya.testcamiones.ui.DashboardFragment;
 import com.javierpinya.testcamiones.ui.PerfilFragment;
 import com.javierpinya.testcamiones.ui.SincronizarFragment;
@@ -13,9 +19,13 @@ import com.javierpinya.testcamiones.ui.SincronizarFragment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 public class MenuActivity extends AppCompatActivity {
+
+    FragmentPagerAdapter adapter;
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
@@ -30,9 +40,16 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        ViewPager vpPager = (ViewPager) findViewById(R.id.pager);
+        adapter = new SliderAdpater(getSupportFragmentManager());
+        vpPager.setAdapter(adapter);
+        vpPager.setPageTransformer(true, new CubeOutTransformer());
+    }
 
+
+/*
         bottomNavigationView = findViewById(R.id.nav_view);
-        frameLayout = findViewById(R.id.contenedor_menu);
+        //frameLayout = findViewById(R.id.contenedor_menu);
 
         dashboardFragment = new DashboardFragment();
         perfilFragment = new PerfilFragment();
@@ -66,6 +83,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    /*
 
     private void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -78,4 +96,6 @@ public class MenuActivity extends AppCompatActivity {
                 fragmentTransaction.add(R.id.contenedor_menu, fragment);
                 fragmentTransaction.commit();
     }
+
+     */
 }

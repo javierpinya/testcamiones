@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.javierpinya.testcamiones.Clases.VehiculoEntity;
+import com.javierpinya.testcamiones.Clases.TaccamiEntity;
 import com.javierpinya.testcamiones.R;
 
 import java.util.List;
@@ -17,10 +17,10 @@ import java.util.List;
 public class VehiculosAdapter extends RecyclerView.Adapter<VehiculosAdapter.VehiculosAdapter_Holder> {
 
 
-    private List<VehiculoEntity> listaVehiculoEntities;
+    private List<TaccamiEntity> listaVehiculoEntities;
     private AdapterView.OnItemClickListener itemClickListener;
 
-    public VehiculosAdapter(List<VehiculoEntity> listaVehiculoEntities, AdapterView.OnItemClickListener listener){
+    public VehiculosAdapter(List<TaccamiEntity> listaVehiculoEntities, AdapterView.OnItemClickListener listener){
         this.listaVehiculoEntities = listaVehiculoEntities;
         this.itemClickListener = listener;
     }
@@ -59,7 +59,8 @@ public class VehiculosAdapter extends RecyclerView.Adapter<VehiculosAdapter.Vehi
             ivCisternaInspeccionada = itemView.findViewById(R.id.ivCisternaInspeccionada);
         }
 
-        public void bind(final VehiculoEntity vehiculoEntity, final OnItemClickListener listener){
+        public void bind(final TaccamiEntity taccamiEntity, final OnItemClickListener listener){
+            /*
             this.tvTractora.setText(listaVehiculoEntities.get(getAdapterPosition()).gettMatricula().toString());
             this.tvCisterna.setText(listaVehiculoEntities.get(getAdapterPosition()).getcMatricula().toString());
             this.ivCisterna.setImageResource(R.drawable.ic_oil_tank);
@@ -93,6 +94,8 @@ public class VehiculosAdapter extends RecyclerView.Adapter<VehiculosAdapter.Vehi
             }else{
                 this.ivTractoraInspeccionada.setImageResource(R.drawable.ic_inspeccionado_false);
             }
+
+             */
 
 
 
