@@ -6,28 +6,29 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.javierpinya.testcamiones.Clases.TaccamiEntity;
+import com.javierpinya.testcamiones.Repositories.TaccamiRepository;
 
 import java.util.List;
 
-public class VehiculoViewModel extends AndroidViewModel {
+public class TaccamiViewModel extends AndroidViewModel {
 
 
     private List<TaccamiEntity> allVehiculos;
-    private VehiculoRepository vehiculoRepository;
+    private TaccamiRepository taccamiRepository;
 
-    public VehiculoViewModel(Application application){
+    public TaccamiViewModel(Application application){
         super(application);
 
-        vehiculoRepository = new VehiculoRepository(application);
+        taccamiRepository = new TaccamiRepository(application);
     }
 
 
     public LiveData<List<TaccamiEntity>> getAllVehiculos(){
-        return vehiculoRepository.encuentraVehiculos();
+        return taccamiRepository.encuentraVehiculos();
     }
 
     public void insertarVehiculo(TaccamiEntity taccamiEntity){
-        vehiculoRepository.insert(taccamiEntity);
+        taccamiRepository.insert(taccamiEntity);
     }
 
 

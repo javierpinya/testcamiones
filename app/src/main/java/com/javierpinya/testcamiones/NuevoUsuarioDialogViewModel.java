@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.javierpinya.testcamiones.Clases.UsuarioEntity;
+import com.javierpinya.testcamiones.Repositories.UsuarioRepository;
 
 import java.util.List;
 

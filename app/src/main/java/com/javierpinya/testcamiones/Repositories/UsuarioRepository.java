@@ -1,4 +1,4 @@
-package com.javierpinya.testcamiones;
+package com.javierpinya.testcamiones.Repositories;
 
 
 import android.app.Application;
@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.javierpinya.testcamiones.AppDatabase;
 import com.javierpinya.testcamiones.Clases.UsuarioEntity;
 import com.javierpinya.testcamiones.Dao.UsuarioDao;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class UsuarioRepository {
     private UsuarioDao usuarioDao;
 
-    UsuarioRepository(Application application){
+    public UsuarioRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
         usuarioDao = db.usuarioDao();
     }

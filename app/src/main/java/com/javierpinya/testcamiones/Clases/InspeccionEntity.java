@@ -20,11 +20,11 @@ import static androidx.room.ForeignKey.CASCADE;
         foreignKeys = {
                 @ForeignKey(entity = TacprcoEntity.class,
                         parentColumns = "id",
-                        childColumns = "tMatriculaId",
+                        childColumns = "tractoraId",
                         onDelete = CASCADE),
                 @ForeignKey(entity = TacsecoEntity.class,
                         parentColumns = "id",
-                        childColumns = "cMatriculaId",
+                        childColumns = "cisternaId",
                         onDelete = CASCADE),
                 @ForeignKey(entity = TaccatrEntity.class,
                         parentColumns = "id",
@@ -41,6 +41,7 @@ public class InspeccionEntity {
     @PrimaryKey(autoGenerate = true)
     public int id;
     public String inspeccion;
+    public String inspector;
     public String instalacion;
     public int tractoraId;
     public int cisternaId;
@@ -105,6 +106,14 @@ public class InspeccionEntity {
 
     public void setInspeccion(String inspeccion) {
         this.inspeccion = inspeccion;
+    }
+
+    public String getInspector() {
+        return inspector;
+    }
+
+    public void setInspector(String inspector) {
+        this.inspector = inspector;
     }
 
     public String getInstalacion() {

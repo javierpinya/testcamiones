@@ -1,24 +1,25 @@
-package com.javierpinya.testcamiones;
+package com.javierpinya.testcamiones.Repositories;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.javierpinya.testcamiones.AppDatabase;
 import com.javierpinya.testcamiones.Clases.TaccamiEntity;
 import com.javierpinya.testcamiones.Dao.TaccamiDao;
 
 import java.util.List;
 
 
-public class VehiculoRepository {
+public class TaccamiRepository {
 
 
     private TaccamiDao taccamiDao;
 
-    VehiculoRepository(Application application){
+    public TaccamiRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
-        taccamiDao = db.vehiculoDao();
+        taccamiDao = db.taccamiDao();
     }
 
     public LiveData<List<TaccamiEntity>> encuentraVehiculos(){
@@ -36,8 +37,8 @@ public class VehiculoRepository {
         insertAsyncTask(TaccamiDao dao){ asyncTaskDao = dao; }
 
         @Override
-        protected Void doInBackground(TaccamiEntity... vehiculoEntities) {
-            asyncTaskDao.insert(vehiculoEntities[0]);
+        protected Void doInBackground(TaccamiEntity... taccamiEntities) {
+            asyncTaskDao.insert(taccamiEntities[0]);
             return null;
         }
     }

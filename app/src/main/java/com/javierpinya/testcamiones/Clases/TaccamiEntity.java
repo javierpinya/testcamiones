@@ -15,24 +15,24 @@ import static androidx.room.ForeignKey.CASCADE;
         foreignKeys = {
                 @ForeignKey(entity = TacprcoEntity.class,
                         parentColumns = "id",
-                        childColumns = "tMatriculaId",
+                        childColumns = "tractoraId",
                         onDelete = CASCADE),
                 @ForeignKey(entity = TacsecoEntity.class,
                         parentColumns = "id",
-                        childColumns = "cMatriculaId",
+                        childColumns = "cisternaId",
                         onDelete = CASCADE)
         },
         indices = {@Index(value = {"id"}, unique = true),
-                @Index(value = {"tMatriculaId"}, unique = true),
-                @Index(value = {"cMatriculaId"}, unique = true)}
+                @Index(value = {"tractoraId"}, unique = true),
+                @Index(value = {"cisternaId"}, unique = true)}
 )
 public class TaccamiEntity {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
     public int cod_vehiculo;
-    public int tMatriculaId;
-    public int cMatriculaId;
+    public int tractoraId;
+    public int cisternaId;
     public int tara;
     public int pesoMaximo;
     public Date fec_baja = new Date();
@@ -56,20 +56,20 @@ public class TaccamiEntity {
         this.cod_vehiculo = cod_vehiculo;
     }
 
-    public int gettMatriculaId() {
-        return tMatriculaId;
+    public int getTractoraId() {
+        return tractoraId;
     }
 
-    public void settMatriculaId(int tMatriculaId) {
-        this.tMatriculaId = tMatriculaId;
+    public void setTractoraId(int tractoraId) {
+        this.tractoraId = tractoraId;
     }
 
-    public int getcMatriculaId() {
-        return cMatriculaId;
+    public int getCisternaId() {
+        return cisternaId;
     }
 
-    public void setcMatriculaId(int cMatriculaId) {
-        this.cMatriculaId = cMatriculaId;
+    public void setCisternaId(int cisternaId) {
+        this.cisternaId = cisternaId;
     }
 
     public int getTara() {

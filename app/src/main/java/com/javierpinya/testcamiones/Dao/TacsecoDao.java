@@ -12,13 +12,13 @@ import com.javierpinya.testcamiones.Clases.TacsecoEntity;
 public interface TacsecoDao {
 
     @Insert
-    void insertTacprco(TacsecoEntity tacseco);
+    void insertTacseco(TacsecoEntity tacseco);
 
     @Update
-    void updateTacprcoById(TacsecoEntity tacseco);
+    void updateTacsecoById(TacsecoEntity tacseco);
 
     @Delete
-    void deleteTacprcoById(TacsecoEntity tacseco);
+    void deleteTacsecoById(TacsecoEntity tacseco);
 
     @Query("SELECT * FROM tacseco WHERE matricula LIKE :matricula")
     TacsecoEntity findTacsecoByMatricula(String matricula);

@@ -13,25 +13,37 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.javierpinya.testcamiones.Clases.InspeccionEntity;
 import com.javierpinya.testcamiones.Clases.TaccamiEntity;
 import com.javierpinya.testcamiones.Clases.TaccatrEntity;
+import com.javierpinya.testcamiones.Clases.TaccondEntity;
 import com.javierpinya.testcamiones.Clases.TacprcoEntity;
 import com.javierpinya.testcamiones.Clases.TacsecoEntity;
 import com.javierpinya.testcamiones.Clases.UsuarioEntity;
 import com.javierpinya.testcamiones.Converters.Converters;
+import com.javierpinya.testcamiones.Dao.InspeccionDao;
 import com.javierpinya.testcamiones.Dao.TaccamiDao;
+import com.javierpinya.testcamiones.Dao.TaccatrDao;
+import com.javierpinya.testcamiones.Dao.TaccondDao;
+import com.javierpinya.testcamiones.Dao.TacprcoDao;
+import com.javierpinya.testcamiones.Dao.TacsecoDao;
 import com.javierpinya.testcamiones.Dao.UsuarioDao;
 
-@Database(entities = {UsuarioEntity.class, TaccamiEntity.class, TacprcoEntity.class, TacsecoEntity.class, InspeccionEntity.class, TaccatrEntity.class}, version = 3, exportSchema = false)
+@Database(entities = {UsuarioEntity.class, TaccamiEntity.class, TacprcoEntity.class, TacsecoEntity.class, InspeccionEntity.class, TaccatrEntity.class, TaccondEntity.class}, version = 3, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UsuarioDao usuarioDao();
-    public abstract TaccamiDao vehiculoDao();
+    public abstract TaccamiDao taccamiDao();
+    public abstract InspeccionDao inspeccionDao();
+    public abstract TacprcoDao tacprcoDao();
+    public abstract TacsecoDao tacsecoDao();
+    public abstract TaccatrDao taccatrDao();
+    public abstract TaccondDao taccondDao();
+
 
     private static volatile AppDatabase INSTANCE;
 
 
 
-    static AppDatabase getDatabase(final Context context){
+    public static AppDatabase getDatabase(final Context context){
         if (INSTANCE == null){
             synchronized (AppDatabase.class){
                 if (INSTANCE == null){
